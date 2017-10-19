@@ -1,5 +1,5 @@
 {
-  "normal": {
+  "normal": [
     "ee",
     "harr",
     "korr",
@@ -27,34 +27,38 @@
     "fee",
     "eye",
     "oo"
-  },
+  ],
   "pillered": {
+    "vowel": [
     "E",
+    "Y",
+    "A",
+    "O",
+    "U",
+    "EH",
+    "I",
+    "OU"
+    ],
+    "consonant": [
     "H",
     "K",
     "M",
     "SH",
-    "Y",
     "CH",
-    "O",
     "L",
     "V",
     "TH",
     "N",
     "B",
     "D",
-    "A",
     "S",
     "T",
     "P",
-    "U",
     "G",
     "CKH",
     "DJ",
     "R",
-    "EH",
-    "F",
-    "I",
-    "OU"
+    "F"
+    ]
   }
 }
