@@ -1,4 +1,4 @@
-const Runes = require("./Runes.json");
+const Runes = require("./PhoneticRunes.json");
 const RNG = require("./RNG.js");
 
 function generateText(numWords, minWordLength, maxWordLength) {
