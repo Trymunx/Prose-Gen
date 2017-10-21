@@ -29,6 +29,7 @@ function generateWord(minWordLength, maxWordLength) {
 
   var word = [];
   var lastRuneType;
+  var lastRune;
   var rune;
   var random;
 
@@ -42,47 +43,78 @@ function generateWord(minWordLength, maxWordLength) {
     switch (lastRuneType) {
       case "normal":
         if (random < 0.7) {
-          rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          do {
+            rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "normal";
         } else if (random < 0.85) {
-          rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          do {
+            rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "consonant";
         } else {
-          rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          do {
+            rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "vowel";
         }
         break;
       case "consonant":
         if (random < 0.3) {
-          rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          do {
+            rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "normal";
         } else {
-          rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          do {
+            rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "vowel";
         }
         break;
       case "vowel":
         if (random < 0.8) {
-          rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          do {
+            rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "normal";
         } else {
-          rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          do {
+            rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "consonant";
         }
         break;
       default:
         if (random < 0.7) {
-          rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          do {
+            rune = Runes.normal[Math.floor(RNG(Runes.normal.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "normal";
         } else if (random < 0.85) {
-          rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          do {
+            rune = Runes.pillared.consonant[Math.floor(RNG(Runes.pillared.consonant.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "consonant";
         } else {
-          rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          do {
+            rune = Runes.pillared.vowel[Math.floor(RNG(Runes.pillared.vowel.length))];
+          }
+          while (rune === lastRune);
           lastRuneType = "vowel";
         }
     }
 
+    lastRune = rune;
     word.push(rune);
   }
   return word.join("-");
