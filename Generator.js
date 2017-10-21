@@ -27,7 +27,7 @@ function generateWord(minWordLength, maxWordLength) {
     wordLength = Math.round(RNG(minWordLength, maxWordLength));
   }
 
-  var word = "";
+  var word = [];
   var lastRuneType;
   var rune;
   var random;
@@ -83,9 +83,9 @@ function generateWord(minWordLength, maxWordLength) {
         }
     }
 
-    word += rune;
+    word.push(rune);
   }
-  return word;
+  return word.join("-");
 }
 
 module.exports = generateText;
