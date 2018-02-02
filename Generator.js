@@ -9,7 +9,7 @@ function generateText(numWords = 200, minWordLength = 2, maxWordLength = 12) {
     output.push(generateWord(minWordLength, maxWordLength));
   }
 
-  console.log(output.join(" "));
+  return output.join(" ");
 }
 
 function generateWord(minWordLength = 1, maxWordLength = 10) {
