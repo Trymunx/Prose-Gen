@@ -1,11 +1,7 @@
 const Runes = require("./PhoneticRunes.json");
 const RNG = require("./RNG.js");
 
-function generateText(numWords, minWordLength, maxWordLength) {
-
-  if (!numWords) {
-    numWords = 200;
-  }
+function generateText(numWords = 200, minWordLength = 2, maxWordLength = 12) {
 
   var output = [];
 
@@ -16,16 +12,9 @@ function generateText(numWords, minWordLength, maxWordLength) {
   console.log(output.join(" "));
 }
 
-function generateWord(minWordLength, maxWordLength) {
+function generateWord(minWordLength = 1, maxWordLength = 10) {
 
-  var wordLength;
-  if (!minWordLength) {
-    wordLength = Math.round(RNG(1, 10));
-  } else if (!maxWordLength) {
-    console.log("Error, no maximum wordlength specified");
-  } else {
-    wordLength = Math.round(RNG(minWordLength, maxWordLength));
-  }
+  var wordLength = Math.round(RNG(minWordLength, maxWordLength));
 
   var word = [];
   var lastRuneType;
